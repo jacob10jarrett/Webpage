@@ -46,6 +46,12 @@
         margin-top: 10px;
         color: #555;
       }
+      .team-vision {
+        display: none;
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: left;
+      }
       button {
         background: #007bff;
         color: white;
@@ -72,34 +78,54 @@
   <body>
     <header>
       <h1>Meet Our Team</h1>
+      <button>Team Bios</button>
+      <button onclick="toggle('team-vision')">Team Vision</button>
+      <p id="team-vision" class="team-vision">
+        Our team of computer science students is dedicated to developing
+        innovative software solutions with integrity, collaboration, and a
+        commitment to excellence. We value partnership and inclusivity,
+        respecting each member’s ideas and maintaining clear, timely
+        communication on updates and challenges. We hold ourselves accountable,
+        taking responsibility for individual tasks while assisting one another
+        to meet deadlines. Constructive feedback is essential, as it helps us
+        improve and maintain high standards in our code quality and testing.
+        With a flexible approach, we stay adaptable to change, driven by a
+        shared passion for technology and a focus on making a meaningful impact.
+      </p>
     </header>
 
     <div class="container">
       <div class="card">
         <h2>Matthew Kolibas</h2>
         <p>Cyber Security Person Man Dude</p>
-        <button onclick="toggleBio('bio1')">Show Bio</button>
+        <button onclick="toggle('bio1')">Show Bio</button>
         <p id="bio1" class="bio">Just a dude who computers.</p>
       </div>
       <div class="card">
         <h2>Joseph Vysotsky</h2>
         <p>Professional Procrastinator</p>
-        <button onclick="toggleBio('bio2')">Show Bio</button>
-        <p id="bio2" class="bio">
+        <button onclick="toggle('bio2')">Show Bio</button>
+        <div id="bio2" class="bio">
           <img src="./img/joseph.png" alt="Joseph's Photo" class="avatar" />
           Joseph is a Professional Procrastinator that has expirenece in project
           management
+          <h5>Moodboard</h5>
           <img
             class="moodboard"
             src="./img/Joseph_MoodBoard1.jpg"
             alt="Joseph's Meme Photo"
           />
-        </p>
+          <img
+            class="moodboard"
+            src="./img/Joseph_Moodboard_2.jpg"
+            alt="Joseph's Meme Photo"
+          />
+        </div>
       </div>
       <div class="card">
         <h2>Nick Volinski</h2>
         <p>Cyber Security Person Man</p>
-        <button onclick="toggleBio('bio3')">Show Bio</button>
+        <button onclick="toggle('bio3')">Show Bio</button>
         <p id="bio3" class="bio">
           <img src="./img/nick.jpeg" alt="Nick's Photo" class="avatar" />
           Nick is a person man who also does Cyber Security.
@@ -108,12 +134,12 @@
     </div>
 
     <script>
-      function toggleBio(bioId) {
-        const bio = document.getElementById(bioId);
-        if (bio.style.display === "none" || bio.style.display === "") {
-          bio.style.display = "block";
+      function toggle(id) {
+        const elem = document.getElementById(id);
+        if (elem.style.display === "none" || elem.style.display === "") {
+          elem.style.display = "block";
         } else {
-          bio.style.display = "none";
+          elem.style.display = "none";
         }
       }
     </script>
